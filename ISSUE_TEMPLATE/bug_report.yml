@@ -1,0 +1,52 @@
+name: Bug report
+description: Report a bug in any Arbr product
+labels: ["bug", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to file a bug report. Please fill in as much detail as possible.
+
+  - type: input
+    id: product
+    attributes:
+      label: Affected product / repo
+      placeholder: e.g. arbr-control-plane, arbr-sdk-js
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      placeholder: e.g. v0.1.0, or "main" for latest
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Describe the bug
+      description: What happened? What did you expect to happen?
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Start with docker compose up
+        2. Send a request to /v1/chat
+        3. Observe error
+    validations:
+      required: true
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      placeholder: |
+        OS: macOS 14
+        Node: 20.x
+        Docker: 25.x
